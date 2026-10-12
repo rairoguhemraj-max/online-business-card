@@ -1,49 +1,152 @@
-/* 
-  wb05 S2, S3 Live coding CSS wardrobe file 
-  (Demonstrates debugging principles and how selectors work to students)
+
+/* Basic page styling */
+body {
+    background-color: #121212;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Main title */
+#main-title {
+    color: gold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Paragraph styling */
+p {
+    color: green;
+}
+
+/* Alert text */
+.alert-text {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* STEP 1: Navigation Menu Alignment */
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    gap: 15px;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background-color: #333333;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #1db954;
+    color: black;
+}
+
+/* Main heading */
+main > h2 {
+    text-align: center;
+    color: white;
+}
+
+/* STEP 2: Horizontal Card Layout */
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Card styling */
+.card {
+    padding: 20px;
+    border: 1px solid #cccccc;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: white;
+    color: #222222;
+    border-radius: 10px;
+}
+
+/* Profile name */
+#profile-name {
+    color: #1db954;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+}
+
+/* Card information */
+.card-info {
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* STEP 3: Fix Image Overflow */
+
+/* Old fixed-size code: commented out as required */
+/*
+img {
+    width: 1000px;
+    height: 600px;
+}
 */
 
-/* [S2] Background color basic styling (canvas) */
-body {
-  background-color: #121212;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: #ffffff;
+/* New responsive image code */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
 }
 
-/* [S2] Tag selector: turns ALL p elements green indiscriminately */
-p {
-  color: green;
+/* Contact section */
+.contact-section {
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #444444;
+    border-radius: 10px;
 }
 
-/* [S2] Class selector: group uniform for multiple elements */
-.alert-text {
-  color: red;
-  font-size: 20px;
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #444444;
 }
 
-/* [S2] ID selector: one-of-a-kind absolute power */
-#main-title {
-  color: gold; 
-  /* Use text-shadow for a dark outline to improve readability */
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
 
-/* Additional decoration (card layout skeleton preparation) */
-.card {
-  padding: 20px;
-  border: 1px solid #ccc;
-  width: 300px;
-  background-color: white;
-}
+    nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 
-#profile-name {
-  color: #1db954;
-  font-size: 28px;
-  letter-spacing: -0.5px;
-}
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.card-info {
-  color: #b3b3b3;
-  font-size: 15px;
-  line-height: 1.6;
+    .card {
+        width: 100%;
+        max-width: 350px;
+    }
 }
